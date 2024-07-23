@@ -9,7 +9,7 @@ export function Navbar (){
             </a>
             <div className="paginas">
                 <a className="paginas-txt" href="/">Home</a>
-                <a className="paginas-txt" href="/">Productos</a>
+                <a className="paginas-txt" href="/lista">Productos</a>
                 <a className="paginas-txt" href="">Contacto</a>
             </div>
             <CartWidget />

@@ -10,11 +10,13 @@ export function ItemDetailContainer({ products }) {
     }
 
     return (
-        <div>
-            <h1>{product.name}</h1>
+        <div className='product-detail'>
+            <h1 className='product-detail-title'>{product.name}</h1>
             <p>Categoría: {product.category}</p>
-            <img src={`/${product.img}`} alt={product.name} style={{ width: '200px', height: '200px' }}/>
-            <p>Precio: ${product.price}</p>
+            <img src={`/${product.img}`} alt={product.name} style={{ width: '250px', height: '250px' }}/>
+            <p className='product-detail-price'>Precio: ${product.price}</p>
+
+            <button className='cart-button'>Agregar a carrito</button>
         </div>
     )
 }
