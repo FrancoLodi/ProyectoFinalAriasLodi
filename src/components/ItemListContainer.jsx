@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-// Componente ItemListContainer con filtros de categoría
+
 export function ItemListContainer ({ products }) {
     const [filter, setFilter] = useState('All')
 
