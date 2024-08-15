@@ -1,68 +1,36 @@
-import React from "react"
-import { Navbar } from "./components/Navbar.jsx"
-import { ItemListContainer } from "./components/ItemListContainer.jsx"
-import { ItemDetailContainer } from "./components/ItemDetailContainer.jsx"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import "./App.css"
+import React from "react";
+import { Navbar } from "./components/Navbar.jsx";
+import { ItemListContainer } from "./components/ItemListContainer.jsx";
+import { ItemDetailContainer } from "./components/ItemDetailContainer.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { ContextProvider } from './components/Context.jsx';
+import Cart from './components/Cart.jsx';
+import NotFound from './components/NotFound.jsx';
+import Checkout from './components/Checkout.jsx';
+import Contacto from './components/Contacto.jsx';
 
-const products = [
-    { 
-        id: 1, 
-        name: 'Remera 1', 
-        category: 'Remeras',
-        price: '1500',
-        img: 'src/assets/top1.jpg'
-    },
-    { 
-        id: 2, 
-        name: 'Remera 2', 
-        category: 'Remeras',
-        price: '1200',
-        img: 'src/assets/top2.jpg' 
-    },
-    { 
-        id: 3, 
-        name: 'Remera 3', 
-        category: 'Remeras',
-        price: '2000',
-        img: 'src/assets/top3.jpg' 
-    },
-    { 
-        id: 4, 
-        name: 'Pantalon 1', 
-        category: 'Pantalones',
-        price: '2000',
-        img: 'src/assets/bot1.jpg' 
-    },
-    { 
-        id: 5, 
-        name: 'Pantalon 2', 
-        category: 'Pantalones',
-        price: '2000',
-        img: 'src/assets/bot2.jpg' 
-    },
-    { 
-        id: 6, 
-        name: 'Pantalon 3', 
-        category: 'Pantalones',
-        price: '1500',
-        img: 'src/assets/bot3.jpg' 
-    },
-]
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function App () {
     return (
-        <BrowserRouter>
-            <div className="App">
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<ItemListContainer products={products} />} />
-                    <Route path="/lista" element={<ItemListContainer products={products} />} />
-                    <Route path="/lista/:id" element={<ItemDetailContainer products={products} />} />
-                    <Route path="*" element={<p>404 Not found</p>} />
-                </Routes>
-            </div>
-        </BrowserRouter>
+        <ContextProvider>
+            <BrowserRouter>
+                <div className="App">
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<ItemListContainer />} />
+                        <Route path="/lista" element={<ItemListContainer />} />
+                        <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/checkout" element={<Checkout />} />
+                        <Route path="/contacto" element={<Contacto />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                    <ToastContainer />
+                </div>
+            </BrowserRouter>
+        </ContextProvider>
     )
 }

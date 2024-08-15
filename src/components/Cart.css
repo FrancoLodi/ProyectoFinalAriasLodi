@@ -1,0 +1,90 @@
+.contenedor-carrito {
+    display: flex;
+    justify-content: center;
+}
+.contenedor-carrito-detail {
+    display: flex;
+    flex-direction: column;
+}
+.carrito-title{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+}
+.carrito-boton-cantidad {
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: silver;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.basurero {
+    cursor: pointer;
+    display: flex;
+    width: 22px;
+    gap: 6px;
+}
+.botones-control-carrito {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    height: 60px;
+}
+.boton-vaciar-carrito {
+    background-color: tomato;
+    padding-left: 30px;
+    padding-right: 30px;
+    bottom: none;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.boton-volver-menu {
+    background-color: slategrey;
+    padding-left: 30px;
+    padding-right: 30px;
+    bottom: none;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.boton-confirmar-compra {
+    background-color: green;
+    padding-left: 30px;
+    padding-right: 30px;
+    bottom: none;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/*CARRITO VACIO*/
+.mensaje-carrito-vacio {
+    font-size: 28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.imagen-carrito-vacio {
+    display: block;
+    margin-bottom: 60px;
+}
+.button-carrito-volver {
+    position: absolute;
+    left: 44%;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 2px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+}

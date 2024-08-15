@@ -1,16 +1,17 @@
-import { CartWidget } from "./CartWidget.jsx"
+import { CartWidget } from "./CartWidget.jsx";
+import { Link } from 'react-router-dom';
 
 export function Navbar (){
     return (
         <div className="navbar">
-            <a className="navbar-logo" href="/">
+            <Link className="navbar-logo" to="/">
                 <img className="navbar-logo-img" alt="Logo eCommerce" src="/src/assets/logo.png"/>
                 <span className="navbar-logo-txt">TIENDA</span>
-            </a>
+            </Link>
             <div className="paginas">
-                <a className="paginas-txt" href="/">Home</a>
-                <a className="paginas-txt" href="/lista">Productos</a>
-                <a className="paginas-txt" href="">Contacto</a>
+                <Link className="paginas-txt" to="/">Home</Link>
+                <Link className="paginas-txt" to="/lista">Productos</Link>
+                <Link className="paginas-txt" to="/contacto">Contacto</Link>
             </div>
             <CartWidget />
         </div>
